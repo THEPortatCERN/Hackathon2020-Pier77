@@ -25,7 +25,7 @@ SECRET_KEY = 'oijea13f0k2*p-knfg9r%@o^)p7353u=lbami)_0eni%1(!!ip'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,11 +76,9 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.parse("postgres://svkceybsqoomkw:86f66586323bb16b88d89894d80388a2827efdbe7437e5023d3780ad0c3e6d2d@ec2-3-224-97-209.compute-1.amazonaws.com:5432/d1imn42ac6fvt5")
 }
 
 
